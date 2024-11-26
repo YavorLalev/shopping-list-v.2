@@ -1,4 +1,6 @@
-# New Next Project
+# Shopping List App   🛍️
+
+A simple solution to help you organize your shopping. You can create to-do lists and easily add, edit, or remove products from them.
 
 ### Local Development
 
