@@ -6,8 +6,5 @@ export default function HomePage() {
     <>
     <BottomNavigation/>
     </>
-      
-
-    
   );
 }

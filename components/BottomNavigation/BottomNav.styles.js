@@ -21,9 +21,3 @@ export const AddIcon = styled.img`
 width: 100%;
 height: 100%;
 `
-export const ListButton = styled.button`
-appearance: none;
-border: none;
-background: inherit;
-
-`
