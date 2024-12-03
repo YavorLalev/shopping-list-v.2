@@ -10,16 +10,23 @@ export default createGlobalStyle`
 --primary-color: #f8f9fb;
 --secondary-color: #ff4a11;
 
+--font-family: ${workSans.style.fontFamily};
+--font-body: 300 1rem/1.5 var(--font-family);
+--font-button: 500 1rem/1.3 var(--font-family);
+--font-label: 400 1rem/1.4 var(--font-family);
+
 }
   *,
   *::before,
   *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   body {
     margin: 0;
-    font-family: ${workSans.style.fontFamily};
-    background: var(--primary-color)
+    font: var(--font-body);
+    background: var(--primary-color);
   }
 `;
