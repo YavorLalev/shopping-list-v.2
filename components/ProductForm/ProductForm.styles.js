@@ -13,11 +13,21 @@ font: var(--font-label);
 margin-bottom: 24px;
 `
 export const Input = styled.input`
-margin-top: 6px;
-`
+    background-color: var(--input-color);
+    padding: 0.5rem 1rem;
+    margin-top: 6px;
+    box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  `;
 
 export const Select = styled.select`
-margin-top: 6px;
+ background-color: var(--input-color);
+    padding: 0.2rem;
+    margin-top: 6px;
+    box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 `
 export const Fieldset = styled.fieldset`
 border: none;
@@ -31,3 +41,4 @@ border-radius: 10px;
 border:none;
 cursor: pointer;
 `
+  
