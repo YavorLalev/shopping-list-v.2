@@ -9,6 +9,9 @@ export default createGlobalStyle`
 
 --primary-color: #f8f9fb;
 --secondary-color: #ff4a11;
+--input-color: #fefefe;
+--border-color: #e1ded9;
+
 
 --font-family: ${workSans.style.fontFamily};
 --font-body: 300 1rem/1.5 var(--font-family);
