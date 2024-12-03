@@ -1,4 +1,7 @@
 export const measureUnits = [
+"pack",
+"g",
 "kg",
-"gr"
+"l",
+"dose"
 ]
