@@ -1,5 +1,6 @@
 import { NavigationBar, AddButton, AddIcon} from "./BottomNav.styles";
 import ModalWindow from "../Modal/Modal";
+import ProductForm from "../ProductForm/ProductForm";
 import {useState} from "react";
 
 export default function BottomNavigation() {
@@ -13,7 +14,9 @@ export default function BottomNavigation() {
               <AddIcon src="/assets/icon_add.svg" alt="add-product"/>
             </AddButton>
         </NavigationBar>
-        <ModalWindow></ModalWindow>
+        <ModalWindow isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
+            <ProductForm/>
+        </ModalWindow>
         </>
     )
 }
