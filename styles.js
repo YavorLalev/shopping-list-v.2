@@ -13,6 +13,7 @@ export default createGlobalStyle`
 
 --font-family: ${workSans.style.fontFamily};
 --font-body: 300 1rem/1.5 var(--font-family);
+--font-heading: 500 1.3rem/1.5 var(--font-family);
 --font-button: 500 1rem/1.3 var(--font-family);
 --font-label: 400 1rem/1.4 var(--font-family);
 }
