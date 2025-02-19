@@ -20,4 +20,5 @@ background: inherit;
 export const AddIcon = styled.img`
 width: 100%;
 height: 100%;
+cursor:pointer;
 `

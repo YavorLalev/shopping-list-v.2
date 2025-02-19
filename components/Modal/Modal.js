@@ -2,7 +2,7 @@ import { ModalContainer, ModalContent, ModalTitle, ModalHeader, CloseButton } fr
 import { useState, useEffect } from "react";
 
 
-export default function ModalWindow({children, isOpen,onClose}) {
+export default function ModalWindow({children, isOpen, onClose}) {
 
     const[isVisible, setIsVisible] = useState(false);
 

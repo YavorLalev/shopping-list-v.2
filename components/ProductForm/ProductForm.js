@@ -9,6 +9,7 @@ export default function ProductForm() {
         const formData = new FormData(event.target);
         const productData = Object.fromEntries(formData);
     }
+    
     return(
         <>
         <FormContainer onSubmit={handleSubmit}>

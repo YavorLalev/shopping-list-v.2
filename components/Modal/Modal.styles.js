@@ -17,7 +17,6 @@ export const ModalTitle = styled.h2`
 color: var(--secondary-color);
 font: var(--font-heading);
 `
-
 export const CloseButton = styled.button`
 border: none;
 background: none;
