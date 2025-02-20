@@ -3,10 +3,10 @@ import ModalWindow from "../Modal/Modal";
 import ProductForm from "../ProductForm/ProductForm";
 import {useState} from "react";
 
-export default function BottomNavigation() {
+export default function BottomNavigation({ onAddProduct}) {
 
     const[isAddOpen, setAddOpen] = useState(false);
-
+    
     return (
         <>
         <NavigationBar>
@@ -15,7 +15,7 @@ export default function BottomNavigation() {
             </AddButton>
         </NavigationBar>
         <ModalWindow isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
-            <ProductForm/>
+            <ProductForm onAddProduct = {onAddProduct}/>
         </ModalWindow>
         </>
     )
