@@ -1,13 +1,14 @@
 import { FormContainer,Label, Input, Select, Fieldset, FormButton} from "./ProductForm.styles";
 import { measureUnits } from "@/resources/listOfMeasureUnits";
 
-export default function ProductForm() {
+export default function ProductForm({onAddProduct}) {
 
     function handleSubmit(event){
         event.preventDefault()
 
         const formData = new FormData(event.target);
         const productData = Object.fromEntries(formData);
+        onAddProduct(productData);
     }
     
     return(
