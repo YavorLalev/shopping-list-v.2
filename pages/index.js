@@ -1,10 +1,13 @@
+import ProductList from "@/components/ProductList/ProductList";
 import BottomNavigation from "@/components/BottomNavigation";
 
-export default function HomePage() {
+export default function HomePage( {onAddProduct, products}
+) {
 
   return (
     <>
-    <BottomNavigation/>
+    <ProductList products = {products}/>
+    <BottomNavigation  onAddProduct={onAddProduct}/>
     </>
   );
 }
