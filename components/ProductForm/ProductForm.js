@@ -22,7 +22,7 @@ export default function ProductForm({onAddProduct}) {
                 <Input type="number" id="quantity" name="quantity" required/>
             </Label>
             <Label htmlFor="measure-unit">Choose units
-                <Select id="measure-unit" name="measure-unit">
+                <Select id="measure-unit" name="measureUnit">
                 <option value="">Select</option>
                 {measureUnits.map((unit) => (
                     <option key={unit} value={unit}>{unit}</option>

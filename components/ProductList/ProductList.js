@@ -1,16 +1,15 @@
+import { CardContainer, ProductLink } from "./ProductList.styles";
 export default function ProductList({products}) {
 
 return (
     <>
-    <div>
-      <ul>
-        {products.map((piece) => (
-          <li key={piece.id}>
-            {piece.name}
-          </li>
+      <CardContainer>
+        {products.map(({id, name, quantity,measureUnit}) => (
+          <ProductLink href={`/products/${id}`} key={id}>
+            {name} <span>&times;</span> {quantity} {measureUnit}
+          </ProductLink>
         ))}
-      </ul>
-    </div>
+      </CardContainer>
   </>
 );
 }

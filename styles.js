@@ -12,10 +12,11 @@ export default createGlobalStyle`
 --border-color: #e1ded9;
 
 --font-family: ${workSans.style.fontFamily};
---font-body: 300 1rem/1.5 var(--font-family);
+--font-body: 300 1.1rem/1.5 var(--font-family);
 --font-heading: 500 1.3rem/1.5 var(--font-family);
---font-button: 500 1rem/1.3 var(--font-family);
---font-label: 400 1rem/1.4 var(--font-family);
+--font-button: 500 1.1rem/1.3 var(--font-family);
+--font-label: 400 1.1rem/1.4 var(--font-family);
+--font-product: 400 1.1rem/1.3 var(--font-family);
 }
   *,
   *::before,
