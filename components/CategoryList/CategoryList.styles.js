@@ -4,7 +4,7 @@ import Link from "next/link";
 export const GridContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-gap: 3rem;
+gap: 2rem;
 justify-content: center;
 height:100vh;
 align-items: center;
@@ -20,3 +20,15 @@ border-radius: 10px;
 padding: 1rem;
 font: var(--font-product);
 `
+
+export const CategoryItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CategoryText = styled.span`
+  margin-top: 8px; 
+  text-align: center;
+`;
