@@ -8,7 +8,7 @@ export default function HomePage( {onAddProduct, products}
   return (
     <>
     <CategoryList products = {products}/>
-    <ProductList products = {products}/>
+    {/* <ProductList products = {products}/> */}
     <BottomNavigation  onAddProduct={onAddProduct}/>
     </>
   );

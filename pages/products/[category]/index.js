@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Product from "@/components/Product/Product";
 
 export default function ProductDetail({products}) {
   const router = useRouter();
@@ -11,14 +12,18 @@ export default function ProductDetail({products}) {
   return (
     <>
     <h2>Products in {category} list</h2>
-      <ul>
+      <div>
         {filteredProducts
         .map(({id, name, quantity,measureUnit}) => (
-                  <li key={id}>
-                    {name} <span>&times;</span> {quantity} {measureUnit}
-                  </li>
+          <Product
+          key={id}
+          id={id}
+          name={name}
+          quantity={quantity}
+          measureUnit={measureUnit}
+        />
                 ))}
-      </ul>
+      </div>
     </>
   );
 }
