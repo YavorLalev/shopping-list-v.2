@@ -10,6 +10,7 @@ export default createGlobalStyle`
 --secondary-color: #ff4a11;
 --input-color: #fefefe;
 --border-color: #e1ded9;
+--overlay-color:rgba(113, 112, 111, 0.5);
 
 --font-family: ${workSans.style.fontFamily};
 --font-body: 300 1.1rem/1.5 var(--font-family);
