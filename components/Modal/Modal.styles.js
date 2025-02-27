@@ -26,6 +26,7 @@ export const ModalHeader = styled.div`
 display: flex;
 justify-content: space-evenly;
 padding: 10px;
+margin-top: 20px;
 `
 export const ModalTitle = styled.h2`
 color: var(--secondary-color);
