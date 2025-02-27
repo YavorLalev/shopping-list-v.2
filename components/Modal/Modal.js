@@ -1,4 +1,4 @@
-import { ModalContainer, ModalContent, ModalTitle, ModalHeader, CloseButton } from "./Modal.styles";
+import { ModalOverlay, ModalContainer, ModalContent, ModalTitle, ModalHeader, CloseButton } from "./Modal.styles";
 import { useState, useEffect } from "react";
 
 
@@ -18,13 +18,17 @@ export default function ModalWindow({children, isOpen, onClose}) {
     return (
         
         isVisible && (
+          <ModalOverlay>
+
         <ModalContainer>
             <ModalHeader>
                 <ModalTitle>Add a product</ModalTitle>
                 <CloseButton onClick={onClose}>&times;</CloseButton>
             </ModalHeader>
             <ModalContent>{children}</ModalContent>
-        </ModalContainer>)
+        </ModalContainer>
+          </ModalOverlay>
+        )
         
     )
     

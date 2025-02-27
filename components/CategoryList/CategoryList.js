@@ -1,11 +1,11 @@
-import { GridContainer, CategoryLink, CategoryItem, CategoryText } from "./CategoryList.styles";
+import { ListContainer, CategoryLink, CategoryItem, CategoryText } from "./CategoryList.styles";
 import Image from "next/image";
 
 export default function CategoryList({products}) {
     
 return (
     <>
-      <GridContainer>
+      <ListContainer>
         {products
           .map(({ category}) => category) // Extract categories
           .filter((category, index, self) => self.indexOf(category) === index) // Remove duplicates
@@ -16,7 +16,7 @@ return (
                 <CategoryText>{category}</CategoryText>
               </CategoryItem></CategoryLink>
           ))}
-      </GridContainer>
+      </ListContainer>
     </>
 );
 }

@@ -9,6 +9,7 @@ width: 100%;
 bottom: 0;
 left: 0;
 height: 60px;
+z-index: 1;
 background: var(--secondary-color);
 box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.15);
 `
