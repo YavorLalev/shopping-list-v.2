@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const GridContainer = styled.div`
+export const ListContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 gap: 2rem;
 justify-content: center;
 height:100vh;
 align-items: center;
+padding: 90px 0px;
+overflow-y: auto;
 `;
 
 export const CategoryLink = styled(Link)`
