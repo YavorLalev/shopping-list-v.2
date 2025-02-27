@@ -12,15 +12,12 @@ export const ModalOverlay = styled.div`
   align-items: flex-end;
 `
 export const ModalContainer = styled.div`
-width: 500px;
-height: 100 vh;
-border-radius: 20px;
+width: 100%;
+height: 92%;
+border-radius: 20px 20px 0px 0px;
 background: var(--primary-color);
-position:fixed;
-top: 50%; 
-left: 50%;
-transform: translate(-50%, -50%);
-padding: 30px;
+position: relative;
+overflow-y: auto;
  `
 export const ModalContent = styled.div`
 width: 100%;
