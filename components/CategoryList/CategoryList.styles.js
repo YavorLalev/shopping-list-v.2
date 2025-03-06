@@ -8,7 +8,7 @@ gap: 2rem;
 justify-content: center;
 height:100vh;
 align-items: center;
-padding: 90px 0px;
+padding: 90px;
 overflow-y: auto;
 `;
 
