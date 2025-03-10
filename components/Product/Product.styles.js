@@ -11,3 +11,8 @@ border-radius: 10px;
 padding: 1rem;
 font: var(--font-product);
 `
+
+export const StyledSpan = styled.span`
+text-decoration: ${props => props.$isCompleted ? "line-through" : ""};
+
+`
