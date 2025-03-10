@@ -5,7 +5,7 @@ export default function Product({id, name, quantity,measureUnit, onChange, compl
 return (
     <>
           <input type = "checkbox" onChange={onChange} checked={completed}/>
-          <ProductLink href={`/products/${id}`} key={id}>
+          <ProductLink $isCompleted={completed} href={`/products/${id}`} key={id}>
             <StyledSpan $isCompleted={completed}> {name} <span>&times;</span> {quantity} {measureUnit}</StyledSpan>
           </ProductLink>
         
