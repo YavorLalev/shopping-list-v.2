@@ -18,6 +18,9 @@ setProducts((prevProducts) =>
     product.id === productId ? {...product, isCompleted: !product.isCompleted } : product))
 }
 
+function handleDeleteProduct() {
+  setProducts(products.filter((product) => !product.isCompleted))
+}
   return (
     <>
       <GlobalStyle />
@@ -25,6 +28,7 @@ setProducts((prevProducts) =>
     {...pageProps}
     onAddProduct = {handleAddProduct}
     onChange={handleCheckboxChange}
+    onDeleteProduct={handleDeleteProduct}
     products = {products}
       />
     </>

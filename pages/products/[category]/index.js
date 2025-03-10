@@ -13,14 +13,13 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 `
-export default function ProductList({products, onChange}) {
+export default function ProductList({products, onChange, onDeleteProduct}) {
   const router = useRouter();
   const { category } = router.query; 
 
   const filteredProducts = products.filter(
     (product) => product.category === category
   );
-  
   return (
     <>
     <h2>Products in {category} list</h2>
@@ -35,10 +34,10 @@ export default function ProductList({products, onChange}) {
           measureUnit={measureUnit}
           completed={isCompleted}
           onChange={() =>onChange(id)}
-
         />
           ))}
       </ProductListContainer>
+      <button onClick={() => onDeleteProduct()}><span>&times;</span></button>
     </>
   );
 }
