@@ -15,5 +15,9 @@ font: var(--font-product);
 
 export const StyledSpan = styled.span`
 text-decoration: ${props => props.$isCompleted ? "line-through" : ""};
+`
 
+export const ProductContainer = styled.div`
+display: flex;
+gap: 1em;
 `
