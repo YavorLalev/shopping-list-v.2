@@ -7,8 +7,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 height: 100vh;
-gap: 1.6rem;
-align-items: center;
+gap: 1.2rem;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 `
 export default function ProductList({products, onChange}) {
   const router = useRouter();
