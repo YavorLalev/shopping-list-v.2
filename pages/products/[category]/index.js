@@ -24,7 +24,7 @@ export default function ProductList({products, onChange, onDeleteProduct}) {
   );
   return (
     <>
-    <h2>Products in {category} list</h2>
+    <h3>Products in {category} list</h3>
       <ProductListContainer>
         {filteredProducts
         .map(({id, name, quantity,measureUnit, isCompleted}) => (
