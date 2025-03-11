@@ -15,7 +15,7 @@ export default function BottomNavigation({ onAddProduct}) {
             </AddButton>
         </NavigationBar>
         <ModalWindow modalTitle="Add a product" isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
-            <ProductForm onAddProduct = {onAddProduct}/>
+            <ProductForm onAddProduct={onAddProduct}/>
         </ModalWindow>
         </>
     )

@@ -13,7 +13,6 @@ const [isConfirmed, setIsConfirmed ] = useState(false);
 // Add a new product
   function handleAddProduct(newProduct) {
         setProducts([...products, {...newProduct, id: uid(), isCompleted: false}])
-
 }
 
   // Handle checkbox change (mark product as completed or not)
@@ -34,13 +33,13 @@ function handleDeleteProduct() {
       <GlobalStyle />
       <Component 
     {...pageProps}
-    onAddProduct = {handleAddProduct}
+    onAddProduct={handleAddProduct}
     onChange={handleCheckboxChange}
     onDeleteProduct={handleDeleteProduct}
-    products = {products}
-    setProducts = {setProducts}
-    setIsConfirmed = {setIsConfirmed}
-    isConfirmed = {isConfirmed}
+    products={products}
+    setProducts={setProducts}
+    setIsConfirmed={setIsConfirmed}
+    isConfirmed={isConfirmed}
       />
     </>
   );

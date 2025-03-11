@@ -12,7 +12,6 @@ export default function ProductForm({onAddProduct}) {
     }
     
     return(
-        <>
         <FormContainer onSubmit={handleSubmit}>
             <Label htmlFor="name">Name: 
                 <Input type="text" id="name" name="name" required/>
@@ -30,10 +29,8 @@ export default function ProductForm({onAddProduct}) {
                 </Select>
             </Label>
             </Fieldset>
-        
             <Label htmlFor="category">Category: <Input type="text" id="category" name="category" required /></Label>
             <FormButton type="submit">Add Product</FormButton>
         </FormContainer>
-        </>
     );
 }

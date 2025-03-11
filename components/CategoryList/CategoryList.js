@@ -15,7 +15,7 @@ return (
       <ListContainer>
         {uniqueCategories
           .map((category) => (
-            <CategoryLink href = {`/products/${category}`} key={category}> 
+            <CategoryLink href={`/products/${category}`} key={category}> 
            <CategoryItem>
                 <Image src="/assets/Shopping cart.svg" width={140} height={140} alt="add-product" />
                 <CategoryText>{category}</CategoryText>
