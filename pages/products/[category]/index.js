@@ -13,6 +13,17 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 `
+
+export const RemoveButton = styled.button`
+appearance: none;
+border: none;
+background: inherit;
+`
+export const RemoveIcon = styled.img`
+cursor:pointer;
+`
+
+
 export default function ProductList({products, onChange, onDeleteProduct}) {
   const router = useRouter();
   const { category } = router.query; 
@@ -37,7 +48,9 @@ export default function ProductList({products, onChange, onDeleteProduct}) {
         />
           ))}
       </ProductListContainer>
-      <button onClick={() => onDeleteProduct()}><span>&times;</span></button>
+      <RemoveButton type = "button" onClick={() => onDeleteProduct()}> 
+        <RemoveIcon  width={40} height={40} src="/assets/Bin bounce.svg" alt="remove-product"/>
+      </RemoveButton>
     </>
   );
 }
