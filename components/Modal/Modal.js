@@ -2,7 +2,7 @@ import { ModalOverlay, ModalContainer, ModalContent, ModalTitle, ModalHeader, Cl
 import { useState, useEffect } from "react";
 
 
-export default function ModalWindow({children, isOpen, onClose}) {
+export default function ModalWindow({children, isOpen, onClose, modalTitle}) {
 
     const[isVisible, setIsVisible] = useState(false);
 
@@ -14,7 +14,7 @@ export default function ModalWindow({children, isOpen, onClose}) {
           return () => clearTimeout(timer);
         }
       }, [isOpen]);
-
+      
     return (
         
         isVisible && (
@@ -22,7 +22,7 @@ export default function ModalWindow({children, isOpen, onClose}) {
 
         <ModalContainer>
             <ModalHeader>
-                <ModalTitle>Add a product</ModalTitle>
+                <ModalTitle>{modalTitle}</ModalTitle>
                 <CloseButton onClick={onClose}>&times;</CloseButton>
             </ModalHeader>
             <ModalContent>{children}</ModalContent>
