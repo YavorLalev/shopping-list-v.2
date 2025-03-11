@@ -6,8 +6,8 @@ export default function HomePage( {onAddProduct, products}
 
   return (
     <>
-    <CategoryList products = {products}/>
-    <BottomNavigation  onAddProduct={onAddProduct}/>
+    <CategoryList products={products}/>
+    <BottomNavigation onAddProduct={onAddProduct}/>
     </>
   );
 }

@@ -14,8 +14,8 @@ export default function BottomNavigation({ onAddProduct}) {
               <AddIcon src="/assets/icon_add.svg" alt="add-product"/>
             </AddButton>
         </NavigationBar>
-        <ModalWindow isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
-            <ProductForm onAddProduct = {onAddProduct}/>
+        <ModalWindow modalTitle="Add a product" isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
+            <ProductForm onAddProduct={onAddProduct}/>
         </ModalWindow>
         </>
     )
