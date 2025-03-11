@@ -1,11 +1,14 @@
 import GlobalStyle from "../styles";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }) {
 
 const [products, setProducts] = useLocalStorageState('products', {
   defaultValue: []});
+
+const [isConfirmed, setIsConfirmed ] = useState(false);
 
   function handleAddProduct(newProduct) {
         setProducts([...products, {...newProduct, id: uid(), isCompleted: false}])
@@ -20,6 +23,8 @@ setProducts((prevProducts) =>
 
 function handleDeleteProduct() {
   setProducts(products.filter((product) => !product.isCompleted))
+
+  setIsConfirmed(false);
 }
   return (
     <>
@@ -30,6 +35,9 @@ function handleDeleteProduct() {
     onChange={handleCheckboxChange}
     onDeleteProduct={handleDeleteProduct}
     products = {products}
+    setProducts = {setProducts}
+    setIsConfirmed = {setIsConfirmed}
+    isConfirmed = {isConfirmed}
       />
     </>
   );
