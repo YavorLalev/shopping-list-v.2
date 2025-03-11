@@ -31,6 +31,9 @@ export default function ProductList({products, onChange, onDeleteProduct, setIsC
     (product) => product.category === category
   );
 
+  // Check if any product is marked as completed
+  const selectedProducts = filteredProducts.filter((product) => product.isCompleted);
+
   return (
     <>
     <h3>Products in {category} list</h3>
@@ -48,7 +51,7 @@ export default function ProductList({products, onChange, onDeleteProduct, setIsC
         />
           ))}
       </ProductListContainer>
-      <DeleteButton deleteProduct = {() => setIsConfirmed(true)}/>
+      {selectedProducts.length > 0 && <DeleteButton deleteProduct = {() => setIsConfirmed(true)}/> }
       <ModalWindow 
         modalTitle="Are you sure?"
         isOpen={isConfirmed} 
