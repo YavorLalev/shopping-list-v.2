@@ -7,4 +7,5 @@ background: inherit;
 position: absolute;
 top: 30px;
 right: 30px;
+cursor: pointer;
 `
