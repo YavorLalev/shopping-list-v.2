@@ -1,5 +1,17 @@
+import PlayAnimationOnHover from "@/utils/animation";
 import { ListContainer, CategoryLink, CategoryItem, CategoryText } from "./CategoryList.styles";
-import Image from "next/image";
+import ShoppingIcon from "../../public/lotties/ShoppingIcon.json"
+
+const style = {
+    height: 160,
+    width: 160,
+  };
+  
+const options = {
+    animationData: ShoppingIcon,
+    loop: true,
+    autoplay: false,
+  };
 
 export default function CategoryList({products}) {
 
@@ -17,7 +29,7 @@ return (
           .map((category) => (
             <CategoryLink href={`/products/${category}`} key={category}> 
            <CategoryItem>
-                <Image src="/assets/Shopping cart.svg" width={140} height={140} alt="add-product" />
+            <PlayAnimationOnHover style={style} options={options}/>
                 <CategoryText>{category}</CategoryText>
               </CategoryItem></CategoryLink>
           ))}
