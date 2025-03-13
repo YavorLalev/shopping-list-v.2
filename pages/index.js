@@ -1,8 +1,7 @@
 import BottomNavigation from "@/components/BottomNavigation";
 import CategoryList from "@/components/CategoryList/CategoryList";
 
-export default function HomePage( {onAddProduct, products}
-) {
+export default function HomePage( {onAddProduct, products}) {
 
   return (
     <>
