@@ -25,8 +25,6 @@ export default function ProductForm({onAddProduct}) {
         onAddProduct(formValues);
     }
 
-   
-    
     return(
         <FormContainer onSubmit={handleSubmit}>
             <Label htmlFor="name">Name: 
