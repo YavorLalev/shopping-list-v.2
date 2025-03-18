@@ -8,9 +8,9 @@ export default function ProductForm({onAddProduct}) {
         name: "",
         quantity:"",
         measureUnit: "",
-        category:""
+        category:"",
     })
-
+    
     function handleInputChange(event) {
         const {name, value} = event.target;
         setFormValues(
@@ -23,6 +23,11 @@ export default function ProductForm({onAddProduct}) {
     function handleSubmit(event){
         event.preventDefault();
         onAddProduct(formValues);
+        setFormValues({
+            name: "",
+            quantity:"",
+            measureUnit: "",
+            category:""})
     }
 
     return(
@@ -34,7 +39,8 @@ export default function ProductForm({onAddProduct}) {
                 name="name" 
                 value={formValues.name}
                 onChange={handleInputChange}
-                required/>
+                required
+                />
             </Label> 
             <Fieldset>
             <Label htmlFor="quantity">Quantity:
@@ -44,7 +50,8 @@ export default function ProductForm({onAddProduct}) {
                 name="quantity"
                 value={formValues.quantity}
                 onChange={handleInputChange} 
-                required/>
+                required
+                />
             </Label>
             <Label htmlFor="measure-unit">Choose units
                 <Select 
@@ -66,7 +73,9 @@ export default function ProductForm({onAddProduct}) {
                 id="category" 
                 value={formValues.category}
                 onChange={handleInputChange}
-                name="category" required />
+                name="category"
+                required
+                />
                 </Label>
             <FormButton type="submit">Add Product</FormButton>
         </FormContainer>
