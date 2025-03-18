@@ -12,7 +12,7 @@ const [isConfirmed, setIsConfirmed ] = useState(false);
 
 // Add a new product
   function handleAddProduct(newProduct) {
-        setProducts([...products, {...newProduct, id: uid(), isCompleted: false}])
+        setProducts((prevProducts) => [...prevProducts, {...newProduct, id: uid(), isCompleted: false}])
 }
 
   // Handle checkbox change (mark product as completed or not)
@@ -24,7 +24,7 @@ setProducts((prevProducts) =>
 
 // Handle delete of completed products
 function handleDeleteProduct() {
-  setProducts(products.filter((product) => !product.isCompleted))
+  setProducts((prevProducts) => prevProducts.filter((product) => !product.isCompleted))
 
   setIsConfirmed(false);
 }
