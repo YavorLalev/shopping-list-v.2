@@ -15,7 +15,7 @@ export default function ProductList({products, onChange, setIsConfirmed, categor
   return (
     <>
     <Container>
-    <ProductListHeadline>Products in {category} list</ProductListHeadline>
+    <ProductListHeadline>{filteredProducts <= 0 ? "No Products" : `Products in ${category} list`}</ProductListHeadline>
     <ProductListContainer>
         {filteredProducts
         .map(({id, name, quantity,measureUnit, isCompleted}) => (
