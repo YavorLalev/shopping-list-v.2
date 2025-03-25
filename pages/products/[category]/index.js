@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ModalWindow from "@/components/Modal/Modal";
 import { FormButton } from "@/components/ProductForm/ProductForm.styles";
-import ProductList from "@/components/CategoryDetails/CategoryDetails";
+import ProductList from "@/components/ProductList/ProductList";
 import styled from "styled-components";
 
 const ButtonWrapper = styled.div`
