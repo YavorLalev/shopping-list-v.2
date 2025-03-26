@@ -1,5 +1,5 @@
 import Product from "@/components/Product/Product";
-import { ProductListContainer, ProductListHeadline, Container} from "./CategoryDetails.styles";
+import { ProductListContainer, ProductListHeadline, Container} from "./ProductList.styles";
 import DeleteButton from "../DeleteButton/DeleteButton";
 
 export default function ProductList({products, onChange, setIsConfirmed, category}) {

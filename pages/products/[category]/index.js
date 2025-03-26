@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ModalWindow from "@/components/Modal/Modal";
-import { FormButton } from "@/components/ProductForm/ProductForm.styles";
-import ProductList from "@/components/CategoryDetails/CategoryDetails";
+import Button from "@/components/Button/Button";
+import ProductList from "@/components/ProductList/ProductList";
 import styled from "styled-components";
 
 const ButtonWrapper = styled.div`
@@ -28,8 +28,8 @@ export default function CategoryDetails({products,onDeleteProduct,onChange, setI
         onClose={() => setIsConfirmed(false)}
       >
         <ButtonWrapper>
-          <FormButton type = "button" onClick = {() => setIsConfirmed(false)}>Cancel</FormButton>
-          <FormButton type = "button" onClick = {()=> onDeleteProduct()}>Delete</FormButton>
+          <Button type = "button" onClick = {() => setIsConfirmed(false)}>Cancel</Button>
+          <Button $primary type = "button" onClick = {()=> onDeleteProduct()}>Delete</Button>
         </ButtonWrapper>
       </ModalWindow>
     </>

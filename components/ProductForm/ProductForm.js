@@ -1,6 +1,7 @@
 import { FormContainer,Label, Input, Select, Fieldset, FormButton} from "./ProductForm.styles";
 import { measureUnits } from "@/resources/listOfMeasureUnits";
 import { useState } from "react";
+import Button from "../Button/Button";
 
 export default function ProductForm({onAddProduct}) {
 
@@ -77,7 +78,7 @@ export default function ProductForm({onAddProduct}) {
                 required
                 />
                 </Label>
-            <FormButton type="submit">Add Product</FormButton>
+            <Button $primary type="submit">Add Product</Button>
         </FormContainer>
     );
 }
