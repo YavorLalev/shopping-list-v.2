@@ -1,12 +1,8 @@
 import { Card, Container, TitleSection, ProductTitle, ProductData, ProductDataSection} from "./ProductDetails.styles";
 
 
-export default function ProductDetails({products, id}) {
+export default function ProductDetails({name, quantity, measureUnit, category}) {
  
-    const product = products.find(product => product.id === id);
-
-    const {name, category, quantity, measureUnit} = product;
-
     return (
 
 <>
