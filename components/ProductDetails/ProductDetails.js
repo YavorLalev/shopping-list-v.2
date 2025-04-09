@@ -6,7 +6,7 @@ export default function ProductDetails({products, id}) {
     const product = products.find(product => product.id === id);
 
     const {name, category, quantity, measureUnit} = product;
- console.log(product);
+
     return (
 
 <>
