@@ -1,21 +1,16 @@
 import { useRouter } from "next/router";
+import ProductDetails from "@/components/ProductDetails/ProductDetails";
 
-export default function ProductDetails({products}) {
+export default function Detailspage({products}) {
   const router = useRouter();
   const { id } = router.query; 
-
- const product = products.find(product => product.id === id);
-
+  
   return (
     <>
-     <ul>
-        <li key={id}>
-{product.name}
-        </li>
-
-     </ul>
-     
+      <ProductDetails
+       products={products}
+       id={id}
+      />
     </> 
-
   );
 }
