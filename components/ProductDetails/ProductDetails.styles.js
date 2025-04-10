@@ -10,7 +10,7 @@ align-items: center;
 export  const Card = styled.div`
 display: flex;
 width: 400px;
-height:400px;
+// height:400px;
 align-items: center;
 flex-direction: column;
 background-color: var(--input-color);
@@ -24,6 +24,7 @@ margin-top: 40px;
 `
 export const ProductDataSection = styled.section`
 margin-top: 40px;
+margin-bottom: 40px;
 display: flex;
 gap: 1rem;
 flex-direction: column;
