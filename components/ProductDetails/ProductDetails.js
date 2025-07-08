@@ -1,4 +1,5 @@
 import { Card, Container, TitleSection, ProductTitle, ProductData, ProductDataSection} from "./ProductDetails.styles";
+import Button from "../Button/Button";
 
 export default function ProductDetails({name, quantity, measureUnit, category, onEdit}) {
  
@@ -14,7 +15,7 @@ export default function ProductDetails({name, quantity, measureUnit, category, o
              <ProductData>{`Quantity: ${quantity} ${measureUnit}`}</ProductData>
             <ProductData>{`Category: ${category}`}</ProductData>
         </ProductDataSection>
-        <button onClick={onEdit}>edit</button>
+        <Button $primary onClick={onEdit}>edit</Button>
 
     </Card>
 </Container>

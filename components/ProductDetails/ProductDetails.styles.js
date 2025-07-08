@@ -18,6 +18,7 @@ box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.1);
 border: 1px solid var(--border-color);
 border-radius: 10px;
 margin: 2rem;
+padding: 1rem;
 `
 export const TitleSection = styled.section`
 margin-top: 40px;

@@ -11,7 +11,11 @@ export default function Detailspage({products}) {
 
   const product = products.find(product => product.id === id);
   
+  if(!product) {
+    return <p>Loading....</p>
+  }
   const {name, category, quantity, measureUnit} = product;
+  
   return (
     <>
       <ProductDetails
@@ -25,10 +29,8 @@ export default function Detailspage({products}) {
       modalTitle="Edit your product"  
       isOpen={isEditOpen}
       onClose={() => setEditOpen(false)}>
-        <ProductForm
-
-        />
-        </ModalWindow>
+        <ProductForm/>
+      </ModalWindow>
     </> 
   );
 }
