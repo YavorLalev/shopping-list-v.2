@@ -27,6 +27,7 @@ export default function ProductList({products, onChange, setIsConfirmed, categor
           measureUnit={measureUnit}
           completed={isCompleted}
           onChange={() =>onChange(id)}
+          category= {category}
         />
           ))}
       </ProductListContainer>
