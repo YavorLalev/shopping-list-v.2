@@ -1,19 +1,25 @@
 import styled from "styled-components";
 
-export const ProductListContainer = styled.ul `
-display: flex;
-flex-direction: column;
-margin-top: 40px;
-height: 100vh;
-gap: 1.2rem;
-`
+export const ProductListContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  height: 100vh;
+  gap: 1.2rem;
+`;
 export const ProductListHeadline = styled.h3`
-font: var(--font-heading);
-color: var(--secondary-color);
-`
+  font: var(--font-heading);
+  color: var(--secondary-color);
+`;
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 80px;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+`;
+
+export const BackButtonContainer = styled.div`
+  position: fixed;
+  top: 20px;
+  left: 20px;
+`;

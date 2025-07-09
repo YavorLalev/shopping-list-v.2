@@ -7,6 +7,8 @@ import {
   ProductDataSection,
 } from "./ProductDetails.styles";
 import Button from "../Button/Button";
+import BackButton from "../BackButton/BackButton";
+import { BackButtonContainer } from "../ProductList/ProductList.styles";
 
 export default function ProductDetails({
   name,
@@ -17,6 +19,10 @@ export default function ProductDetails({
 }) {
   return (
     <>
+      <BackButtonContainer>
+        <BackButton />
+      </BackButtonContainer>
+
       <Container>
         <Card>
           <TitleSection>
