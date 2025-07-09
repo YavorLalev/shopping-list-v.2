@@ -25,7 +25,6 @@ setProducts((prevProducts) =>
 // Handle delete of completed products
 function handleDeleteProduct() {
   setProducts((prevProducts) => prevProducts.filter((product) => !product.isCompleted))
-
   setIsConfirmed(false);
 }
   return (

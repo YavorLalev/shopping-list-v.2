@@ -3,9 +3,10 @@ import { measureUnits } from "@/resources/listOfMeasureUnits";
 import { useState } from "react";
 import Button from "../Button/Button";
 
-export default function ProductForm({onAddProduct}) {
+export default function ProductForm({onAddProduct, onEditProduct, initialValues = 0}) {
 
-    const [formValues, setFormValues] = useState({
+    const [formValues, setFormValues] = useState(
+        initialValues || {
         name: "",
         quantity:"",
         measureUnit: "",
@@ -17,18 +18,23 @@ export default function ProductForm({onAddProduct}) {
         setFormValues(
            { ...formValues,
             [name]: value
-           }
-        ) 
+           }); 
     }
 
     function handleSubmit(event){
         event.preventDefault();
-        onAddProduct(formValues);
-        setFormValues({
-            name: "",
-            quantity:"",
-            measureUnit: "",
-            category:""})
+
+        if(initialValues && onEditProduct) {
+            onEditProduct({...formValues, id: initialValues.id})
+        } else {
+            onAddProduct(formValues);
+        }
+        
+        // setFormValues({
+        //     name: "",
+        //     quantity:"",
+        //     measureUnit: "",
+        //     category:""})
     }
 
     return(
@@ -78,7 +84,7 @@ export default function ProductForm({onAddProduct}) {
                 required
                 />
                 </Label>
-            <Button $primary type="submit">Add Product</Button>
+            <Button $primary type="submit">{initialValues ? "Save Changes" : "Add Product"}</Button>
         </FormContainer>
     );
 }
