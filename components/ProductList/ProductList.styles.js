@@ -17,3 +17,9 @@ flex-direction: column;
 align-items: center;
 margin-top: 80px;
 `
+
+export const BackButtonContainer = styled.div`
+position: fixed;
+top: 20px;
+left: 20px;
+`

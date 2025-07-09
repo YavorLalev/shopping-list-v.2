@@ -3,8 +3,11 @@ import {
   ProductListContainer,
   ProductListHeadline,
   Container,
+  BackButtonContainer
 } from "./ProductList.styles";
 import DeleteButton from "../DeleteButton/DeleteButton";
+import { BackLink } from "../BackButton/BackButton.style";
+import BackButton from "../BackButton/BackButton";
 
 export default function ProductList({
   products,
@@ -24,7 +27,9 @@ export default function ProductList({
 
   return (
     <>
+   <BackButtonContainer><BackButton/></BackButtonContainer>
       <Container>
+        
         <ProductListHeadline>
           {filteredProducts <= 0
             ? "No Products"
@@ -46,10 +51,11 @@ export default function ProductList({
             )
           )}
         </ProductListContainer>
+      </Container>
         {selectedProducts.length > 0 && (
           <DeleteButton onClick={() => setIsConfirmed(true)} />
         )}
-      </Container>
+        
     </>
   );
 }
