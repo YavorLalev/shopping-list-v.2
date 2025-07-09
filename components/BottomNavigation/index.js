@@ -1,22 +1,25 @@
-import { NavigationBar, AddButton, AddIcon} from "./BottomNav.styles";
+import { NavigationBar, AddButton, AddIcon } from "./BottomNav.styles";
 import ModalWindow from "../Modal/Modal";
 import ProductForm from "../ProductForm/ProductForm";
-import {useState} from "react";
+import { useState } from "react";
 
-export default function BottomNavigation({ onAddProduct}) {
+export default function BottomNavigation({ onAddProduct }) {
+  const [isAddOpen, setAddOpen] = useState(false);
 
-    const[isAddOpen, setAddOpen] = useState(false);
-    
-    return (
-        <>
-        <NavigationBar>
-            <AddButton onClick={() => setAddOpen(true)}>
-              <AddIcon src="/assets/icon_add.svg" alt="add-product"/>
-            </AddButton>
-        </NavigationBar>
-        <ModalWindow modalTitle="Add a product" isOpen={isAddOpen} onClose={() => setAddOpen(false)}>
-            <ProductForm onAddProduct={onAddProduct}/>
-        </ModalWindow>
-        </>
-    )
+  return (
+    <>
+      <NavigationBar>
+        <AddButton onClick={() => setAddOpen(true)}>
+          <AddIcon src="/assets/icon_add.svg" alt="add-product" />
+        </AddButton>
+      </NavigationBar>
+      <ModalWindow
+        modalTitle="Add a product"
+        isOpen={isAddOpen}
+        onClose={() => setAddOpen(false)}
+      >
+        <ProductForm onAddProduct={onAddProduct} />
+      </ModalWindow>
+    </>
+  );
 }
