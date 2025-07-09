@@ -28,13 +28,12 @@ export default function ProductForm({onAddProduct, onEditProduct, initialValues 
             onEditProduct({...formValues, id: initialValues.id})
         } else {
             onAddProduct(formValues);
+            setFormValues({
+            name: "",
+            quantity:"",
+            measureUnit: "",
+            category:""})
         }
-        
-        // setFormValues({
-        //     name: "",
-        //     quantity:"",
-        //     measureUnit: "",
-        //     category:""})
     }
 
     return(
