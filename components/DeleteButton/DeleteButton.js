@@ -13,9 +13,9 @@ const options = {
   autoplay: false,
 };
 
-export default function DeleteButton({ deleteProduct }) {
+export default function DeleteButton({ onClick }) {
   return (
-    <Button type="button" onClick={deleteProduct}>
+    <Button type="button" onClick={onClick}>
       <PlayAnimationOnHover style={style} options={options} />
     </Button>
   );

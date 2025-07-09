@@ -47,7 +47,7 @@ export default function ProductList({
           )}
         </ProductListContainer>
         {selectedProducts.length > 0 && (
-          <DeleteButton deleteProduct={() => setIsConfirmed(true)} />
+          <DeleteButton onClick={() => setIsConfirmed(true)} />
         )}
       </Container>
     </>
