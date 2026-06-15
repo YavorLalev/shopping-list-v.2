@@ -31,7 +31,7 @@ export default function ProductList({
       </BackButtonContainer>
       <Container>
         <ProductListHeadline>
-          {filteredProducts <= 0
+          {filteredProducts.length === 0
             ? "No Products"
             : `Products in ${category} list`}
         </ProductListHeadline>
