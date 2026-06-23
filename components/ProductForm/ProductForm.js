@@ -32,10 +32,17 @@ export default function ProductForm({
   function handleSubmit(event) {
     event.preventDefault();
 
+    const cleanedValues = {
+      ...formValues,
+      name: formValues.name.trim(),
+      quantity: Number(formValues.quantity),
+      category: formValues.category.trim().toLowerCase(),
+    };
+
     if (initialValues && onEditProduct) {
-      onEditProduct({ ...formValues, id: initialValues.id });
+      onEditProduct({ ...cleanedValues, id: initialValues.id });
     } else {
-      onAddProduct(formValues);
+      onAddProduct(cleanedValues);
       setFormValues({
         name: "",
         quantity: "",
