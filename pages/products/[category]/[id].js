@@ -4,7 +4,7 @@ import ProductDetails from "@/components/ProductDetails/ProductDetails";
 import ModalWindow from "@/components/Modal/Modal";
 import ProductForm from "@/components/ProductForm/ProductForm";
 
-export default function Detailspage({ products, onEditProduct, setProducts }) {
+export default function Detailspage({ products, setProducts }) {
   const router = useRouter();
   const { id } = router.query;
   const [isEditOpen, setEditOpen] = useState(false);
