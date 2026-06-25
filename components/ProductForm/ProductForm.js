@@ -24,6 +24,8 @@ export default function ProductForm({
     }
   );
 
+  const [error, setError] = useState("");
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
@@ -32,6 +34,8 @@ export default function ProductForm({
   function handleSubmit(event) {
     event.preventDefault();
 
+    setError("");
+
     const cleanedValues = {
       ...formValues,
       name: formValues.name.trim(),
@@ -39,10 +43,16 @@ export default function ProductForm({
       category: formValues.category.trim().toLowerCase(),
     };
 
+    if (cleanedValues.quantity <= 0) {
+      setError("Product name must contain at least one letter.");
+      return;
+    }
+
     if (initialValues && onEditProduct) {
       onEditProduct({ ...cleanedValues, id: initialValues.id });
     } else {
       onAddProduct(cleanedValues);
+
       setFormValues({
         name: "",
         quantity: "",
@@ -54,6 +64,8 @@ export default function ProductForm({
 
   return (
     <FormContainer onSubmit={handleSubmit}>
+      {error && <p>{error}</p>}
+
       <Label htmlFor="name">
         Name:
         <Input
