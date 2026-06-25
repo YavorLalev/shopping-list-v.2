@@ -30,7 +30,10 @@ export default function CategoryList({ products }) {
   return (
     <ListContainer>
       {uniqueCategories.map((category) => (
-        <CategoryLink href={`/products/${category}`} key={category}>
+        <CategoryLink
+          href={`/products/${category.toLowerCase().replaceAll(" ", "-")}`}
+          key={category}
+        >
           <CategoryItem>
             <PlayAnimationOnHover style={style} options={options} />
             <CategoryText>{category}</CategoryText>
