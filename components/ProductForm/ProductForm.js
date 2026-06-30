@@ -43,8 +43,10 @@ export default function ProductForm({
       category: formValues.category.trim().toLowerCase(),
     };
 
-    if (cleanedValues.quantity <= 0) {
-      setError("Product name must contain at least one letter.");
+    if (cleanedValues.quantity <= 0 || cleanedValues.name.length < 2) {
+      setError(
+        "Product name must contain at least two letters and quantity should be a positive number."
+      );
       return;
     }
 
