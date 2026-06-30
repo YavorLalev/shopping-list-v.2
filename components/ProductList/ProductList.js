@@ -16,7 +16,8 @@ export default function ProductList({
 }) {
   // Filter products by category
   const filteredProducts = products.filter(
-    (product) => product.category === category
+    (product) =>
+      product.category.toLowerCase().replaceAll(" ", "-") === category
   );
 
   // Check if any product is marked as completed
@@ -24,6 +25,14 @@ export default function ProductList({
     (product) => product.isCompleted
   );
 
+  // Format the text in product list headline
+  function formatCategory(category) {
+    return category
+      .replaceAll("-", " ")
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
   return (
     <>
       <BackButtonContainer>
@@ -31,9 +40,9 @@ export default function ProductList({
       </BackButtonContainer>
       <Container>
         <ProductListHeadline>
-          {filteredProducts <= 0
+          {filteredProducts.length === 0
             ? "No Products"
-            : `Products in ${category} list`}
+            : `Products in ${formatCategory(category)} list`}
         </ProductListHeadline>
         <ProductListContainer>
           {filteredProducts.map(
