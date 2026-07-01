@@ -14,14 +14,14 @@ const slideDown = keyframes`
 export const AlertOverlay = styled.div`
   position: fixed;
   inset: 0;
-  background: transparent;
+  background: var(--overlay-color);
   pointer-events: none;
   z-index: 1000;
 `;
 
 export const AlertContainer = styled.div`
   position: fixed;
-  top: 20px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
 
