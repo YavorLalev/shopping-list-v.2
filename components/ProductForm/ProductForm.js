@@ -42,6 +42,7 @@ export default function ProductForm({
       setIsEditOpen(true);
     }
 
+    // Prepare the form data by trimming text and converting values to the correct types.
     const cleanedValues = {
       ...formValues,
       name: formValues.name.trim(),
@@ -133,7 +134,6 @@ export default function ProductForm({
         isOpen={isEditOpen}
         onClose={() => {
           setIsEditOpen(false);
-          setError("");
         }}
         alertTitle="Validation Error"
       >
