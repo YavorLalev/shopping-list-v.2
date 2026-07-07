@@ -8,7 +8,13 @@ import {
 } from "./AlertModal.styles";
 import { useState, useEffect } from "react";
 
-export default function AlertModal({ children, isOpen, onClose, alertTitle }) {
+export default function AlertModal({
+  children,
+  isOpen,
+  onClose,
+  alertTitle,
+  alertType,
+}) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ export default function AlertModal({ children, isOpen, onClose, alertTitle }) {
   return (
     isVisible && (
       <AlertOverlay>
-        <AlertContainer type="error">
+        <AlertContainer alertType={alertType}>
           <AlertContent>
             <AlertTitle>{alertTitle}</AlertTitle>
             <AlertMessage>{children}</AlertMessage>

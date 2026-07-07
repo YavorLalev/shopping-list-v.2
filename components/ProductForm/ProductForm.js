@@ -131,6 +131,7 @@ export default function ProductForm({
       </FormContainer>
 
       <AlertModal
+        alertType="error"
         isOpen={isEditOpen}
         onClose={() => {
           setIsEditOpen(false);
