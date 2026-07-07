@@ -10,7 +10,11 @@ export default function App({ Component, pageProps }) {
 
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [alert, setAlert] = useState("");
+  const [alert, setAlert] = useState({
+    type: "",
+    title: "",
+    message: "",
+  });
 
   // Add a new product
   function handleAddProduct(newProduct) {

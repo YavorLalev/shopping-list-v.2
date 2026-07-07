@@ -15,7 +15,6 @@ export default function ProductForm({
   onEditProduct,
   initialValues = 0,
   setAlert,
-  showAlert,
   setIsModalOpen,
   isModalOpen,
   alert,
@@ -37,7 +36,11 @@ export default function ProductForm({
   function handleSubmit(event) {
     event.preventDefault();
 
-    setAlert("");
+    setAlert({
+      type: "",
+      title: "",
+      message: "",
+    });
 
     // Prepare the form data by trimming text and converting values to the correct types.
     const cleanedValues = {
@@ -48,9 +51,15 @@ export default function ProductForm({
     };
 
     if (cleanedValues.quantity <= 0 || cleanedValues.name.length < 2) {
-      showAlert(
-        "Product name must contain at least two letters and quantity should be a positive number."
-      );
+      setAlert({
+        type: "error",
+        title: "Validation Error",
+        message:
+          "Product name must contain at least two letters and quantity should be a positive number.",
+      });
+
+      setIsModalOpen(true);
+
       return;
     }
 
@@ -128,14 +137,14 @@ export default function ProductForm({
       </FormContainer>
 
       <AlertModal
-        alertType="error"
+        alertType={alert.type}
         isOpen={isModalOpen}
         onClose={() => {
           setIsModalOpen(false);
         }}
-        alertTitle="Validation Error"
+        alertTitle={alert.title}
       >
-        {alert}
+        {alert.message}
       </AlertModal>
     </>
   );
