@@ -9,6 +9,8 @@ export default function App({ Component, pageProps }) {
   });
 
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [alert, setAlert] = useState("");
 
   // Add a new product
   function handleAddProduct(newProduct) {
@@ -36,6 +38,12 @@ export default function App({ Component, pageProps }) {
     );
     setIsConfirmed(false);
   }
+
+  //Helper function to handle the alert message
+  function showAlert(message) {
+    setAlert(message);
+    setIsModalOpen(true);
+  }
   return (
     <>
       <GlobalStyle />
@@ -48,6 +56,11 @@ export default function App({ Component, pageProps }) {
         setProducts={setProducts}
         setIsConfirmed={setIsConfirmed}
         isConfirmed={isConfirmed}
+        setAlert={setAlert}
+        showAlert={showAlert}
+        setIsModalOpen={setIsModalOpen}
+        isModalOpen={isModalOpen}
+        alert={alert}
       />
     </>
   );

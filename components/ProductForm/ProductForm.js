@@ -14,6 +14,11 @@ export default function ProductForm({
   onAddProduct,
   onEditProduct,
   initialValues = 0,
+  setAlert,
+  showAlert,
+  setIsModalOpen,
+  isModalOpen,
+  alert,
 }) {
   const [formValues, setFormValues] = useState(
     initialValues || {
@@ -23,8 +28,6 @@ export default function ProductForm({
       category: "",
     }
   );
-  const [isEditOpen, setIsEditOpen] = useState(false);
-  const [error, setError] = useState("");
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -34,13 +37,7 @@ export default function ProductForm({
   function handleSubmit(event) {
     event.preventDefault();
 
-    setError("");
-
-    //Helper function to handle the error message
-    function showError(message) {
-      setError(message);
-      setIsEditOpen(true);
-    }
+    setAlert("");
 
     // Prepare the form data by trimming text and converting values to the correct types.
     const cleanedValues = {
@@ -51,7 +48,7 @@ export default function ProductForm({
     };
 
     if (cleanedValues.quantity <= 0 || cleanedValues.name.length < 2) {
-      showError(
+      showAlert(
         "Product name must contain at least two letters and quantity should be a positive number."
       );
       return;
@@ -132,13 +129,13 @@ export default function ProductForm({
 
       <AlertModal
         alertType="error"
-        isOpen={isEditOpen}
+        isOpen={isModalOpen}
         onClose={() => {
-          setIsEditOpen(false);
+          setIsModalOpen(false);
         }}
         alertTitle="Validation Error"
       >
-        {error}
+        {alert}
       </AlertModal>
     </>
   );

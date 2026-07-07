@@ -3,7 +3,14 @@ import ModalWindow from "../Modal/Modal";
 import ProductForm from "../ProductForm/ProductForm";
 import { useState } from "react";
 
-export default function BottomNavigation({ onAddProduct }) {
+export default function BottomNavigation({
+  onAddProduct,
+  setAlert,
+  showAlert,
+  setIsModalOpen,
+  isModalOpen,
+  alert,
+}) {
   const [isAddOpen, setAddOpen] = useState(false);
 
   return (
@@ -18,7 +25,14 @@ export default function BottomNavigation({ onAddProduct }) {
         isOpen={isAddOpen}
         onClose={() => setAddOpen(false)}
       >
-        <ProductForm onAddProduct={onAddProduct} />
+        <ProductForm
+          onAddProduct={onAddProduct}
+          setAlert={setAlert}
+          showAlert={showAlert}
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
+          alert={alert}
+        />
       </ModalWindow>
     </>
   );

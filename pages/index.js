@@ -15,7 +15,15 @@ const LottieContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
-export default function HomePage({ onAddProduct, products }) {
+export default function HomePage({
+  onAddProduct,
+  products,
+  setAlert,
+  showAlert,
+  setIsModalOpen,
+  isModalOpen,
+  alert,
+}) {
   return (
     <>
       {products.length <= 0 ? (
@@ -25,7 +33,14 @@ export default function HomePage({ onAddProduct, products }) {
       ) : (
         <CategoryList products={products} />
       )}
-      <BottomNavigation onAddProduct={onAddProduct} />
+      <BottomNavigation
+        onAddProduct={onAddProduct}
+        setAlert={setAlert}
+        showAlert={showAlert}
+        setIsModalOpen={setIsModalOpen}
+        isModalOpen={isModalOpen}
+        alert={alert}
+      />
     </>
   );
 }
