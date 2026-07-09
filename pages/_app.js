@@ -43,8 +43,8 @@ export default function App({ Component, pageProps }) {
     setIsConfirmed(false);
     setAlert({
       type: "success",
-      title: "Deleted",
-      message: "You delete your Product.",
+      title: "",
+      message: "You deleted your Product.",
     });
 
     setIsModalOpen(true);
