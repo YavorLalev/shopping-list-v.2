@@ -41,13 +41,15 @@ export default function App({ Component, pageProps }) {
       prevProducts.filter((product) => !product.isCompleted)
     );
     setIsConfirmed(false);
-  }
+    setAlert({
+      type: "success",
+      title: "Deleted",
+      message: "You delete your Product.",
+    });
 
-  //Helper function to handle the alert message
-  function showAlert(message) {
-    setAlert(message);
     setIsModalOpen(true);
   }
+
   return (
     <>
       <GlobalStyle />
@@ -61,7 +63,6 @@ export default function App({ Component, pageProps }) {
         setIsConfirmed={setIsConfirmed}
         isConfirmed={isConfirmed}
         setAlert={setAlert}
-        showAlert={showAlert}
         setIsModalOpen={setIsModalOpen}
         isModalOpen={isModalOpen}
         alert={alert}
