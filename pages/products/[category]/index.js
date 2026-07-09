@@ -3,6 +3,7 @@ import ModalWindow from "@/components/Modal/Modal";
 import Button from "@/components/Button/Button";
 import ProductList from "@/components/ProductList/ProductList";
 import styled from "styled-components";
+import AlertModal from "@/components/AlertModal/AlertModal";
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -16,6 +17,9 @@ export default function CategoryDetails({
   onChange,
   setIsConfirmed,
   isConfirmed,
+  setIsModalOpen,
+  isModalOpen,
+  alert,
 }) {
   const router = useRouter();
   const { category } = router.query;
@@ -42,6 +46,16 @@ export default function CategoryDetails({
           </Button>
         </ButtonWrapper>
       </ModalWindow>
+      <AlertModal
+        alertType={alert.type}
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
+        alertTitle={alert.title}
+      >
+        {alert.message}
+      </AlertModal>
     </>
   );
 }
