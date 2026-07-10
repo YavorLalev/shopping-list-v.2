@@ -1,4 +1,8 @@
-import PlayAnimationOnHover from "@/utils/animation";
+import dynamic from "next/dynamic";
+
+const PlayAnimationOnHover = dynamic(() => import("@/utils/animation.js"), {
+  ssr: false,
+});
 import {
   ListContainer,
   CategoryLink,
