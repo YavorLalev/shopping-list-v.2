@@ -28,8 +28,8 @@ export const AlertContainer = styled.div`
   width: min(90%, 400px);
   padding: 16px 20px;
 
-  background: ${({ alertType }) =>
-    alertType === "error" ? "var(--secondary-color)" : "#43a047"};
+  background: ${({ $alertType }) =>
+    $alertType === "error" ? "var(--secondary-color)" : "#43a047"};
 
   color: var(--input-color);
 
