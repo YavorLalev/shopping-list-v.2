@@ -1,6 +1,14 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
+
 import BottomNavigation from "@/components/BottomNavigation";
 import CategoryList from "@/components/CategoryList/CategoryList";
-import Lottie from "lottie-react";
+
 import shoppingFever from "../public/lotties/Animation home_page.json";
 import styled from "styled-components";
 
