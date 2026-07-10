@@ -29,7 +29,7 @@ export default function AlertModal({
   return (
     isVisible && (
       <AlertOverlay>
-        <AlertContainer alertType={alertType}>
+        <AlertContainer $alertType={alertType}>
           <AlertContent>
             <AlertTitle>{alertTitle}</AlertTitle>
             <AlertMessage>{children}</AlertMessage>
